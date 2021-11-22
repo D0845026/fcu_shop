@@ -19,7 +19,7 @@ public class ProductController {
         return productManager.getProducts();
     }
 
-    @GetMapping("/keyword")
+    @GetMapping("/products/{keyword}")
     public List<Product> getProducts(@RequestParam String keyword){
         return productManager.getProducts(keyword);
     }
