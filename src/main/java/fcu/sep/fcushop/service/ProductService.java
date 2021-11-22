@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.sql2o.Connection;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Service
@@ -33,7 +34,7 @@ public class ProductService {
                 + " from PRODUCT where NAME=:keyword";
 
             return connection.createQuery(query)
-                .addParameter("keyword", keyword)
+                .addParameter("keyword", "%"+keyword+"%")
                 .executeAndFetch(Product.class);
         }
     }
