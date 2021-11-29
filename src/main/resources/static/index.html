@@ -61,8 +61,8 @@
     <h1 class="mt-3">My Shop</h1>
 
     <div class ="input=group mb-3 mt-5">
-      <input type ="text" class="form-control" placeholder="商品名稱" aria-label="Search" id="productkeyword">
-       <button class="btn btn-outline-secondary" type="button" id="searcgProduct">搜尋</button>
+      <input type ="text" class="form-control" placeholder="商品名稱" aria-label="Search" aria-describedby="searchProduct" id="productKeyword">
+       <button class="btn btn-outline-secondary" type="button" id="searchProduct">搜尋</button>
      </div>
 
     <div class="mt-3 row" id="productList">
@@ -90,7 +90,7 @@
   $( document ).ready( function() {
     console.log( "ready!" );
     emptyProducts();
-    getProducts('products')
+    getProducts('products');
   });
 
   $('#searchProduct').click(function() {
@@ -138,7 +138,7 @@
     .done(function( json ) {
       let products = json;
       addProducts(products);
-      }
+
     })
     // Code to run if the request fails; the raw request and
     // status codes are passed to the function
@@ -152,7 +152,7 @@
     .always(function( xhr, status ) {
       alert( "The request is complete!" );
     });
-
+        }
 </script>
 </body>
 </html>

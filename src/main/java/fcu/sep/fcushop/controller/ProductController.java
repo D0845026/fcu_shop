@@ -20,7 +20,7 @@ public class ProductController {
     }
 
     @GetMapping("/products/{keyword}")
-    public List<Product> getProducts(@RequestParam String keyword){
+    public List<Product> getProducts(@PathVariable("keyword") String keyword){
         return productManager.getProducts(keyword);
     }
 
